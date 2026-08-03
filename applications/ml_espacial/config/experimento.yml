@@ -1,0 +1,30 @@
+experiment:
+  name: california_housing_spatial_pilot
+  seed: 20260803
+  output_dir: outputs
+
+data:
+  dataset: california_housing
+  target: MedHouseVal
+  coordinate_columns: [Longitude, Latitude]
+  sample_limit: null
+validation:
+  n_splits: 5
+  random_shuffle: true
+  spatial_grid_columns: 5
+  spatial_grid_rows: 5
+  moran_k: 8
+  moran_permutations: 199
+models:
+  ridge:
+    alpha: 1.0
+  random_forest:
+    n_estimators: 500
+    min_samples_leaf: 5
+    max_features: 0.7
+    n_jobs: -1
+  lag_features:
+    k_neighbors: 8
+  spatial_basis:
+    n_components: 64
+    gamma: 0.35
