@@ -23,7 +23,7 @@ As etapas 2, 3 e 4 foram posteriormente implementadas como aplicações novas no
 | 1 | Território, escala, dependência e heterogeneidade — nota conceitual | predominantemente conceitual | sem aplicação autônoma prevista | roteiro, linha 1 | documentação em `docs/` |
 | 2 | Dados espaciais, projeções, joins e cartografia — base geográfica documentada | laboratório de preparação de dados | **incorporada e testada** | aplicação nova; 13 testes; workflow configurado | [`applications/dados_espaciais/`](../applications/dados_espaciais/) |
 | 3 | Pesos espaciais, Moran global e LISA — diagnóstico exploratório | laboratório analítico | **incorporada e testada** | aplicação nova; 14 testes locais e remotos | [`applications/autocorrelacao_espacial/`](../applications/autocorrelacao_espacial/) |
-| 4 | OLS, resíduos e testes espaciais — comparação OLS × diagnóstico | laboratório econométrico inicial | **pronta para integração e testada localmente** | aplicação nova; 14 testes; workflow configurado | [`applications/diagnostico_ols/`](../applications/diagnostico_ols/) |
+| 4 | OLS, resíduos e testes espaciais — comparação OLS × diagnóstico | laboratório econométrico inicial | **incorporada e testada** | aplicação nova; 14 testes locais e remotos; PR #12 | [`applications/diagnostico_ols/`](../applications/diagnostico_ols/) |
 | 5 | SAR, SEM, SLX e SDM — modelos e impactos | laboratório econométrico espacial | não localizado; issue aberta | campos operacionais vazios; issue #5 | `applications/econometria_espacial/` |
 | 6 | MAUP, falácia ecológica e sensibilidade — ensaio de robustez | laboratório de sensibilidade territorial | não localizado; issue aberta | campos operacionais vazios; issue #6 | `applications/maup_sensibilidade/` |
 | 7 | GWR, MGWR e heterogeneidade — análise local crítica | laboratório de heterogeneidade | não localizado; issue aberta | campos operacionais vazios; issue #7 | `applications/heterogeneidade_espacial/` |
@@ -56,7 +56,7 @@ Para reduzir duplicação, os treze exercícios são organizados em aplicações
 
 1. **concluída:** dados espaciais, projeções, joins e cartografia;
 2. **concluída:** matrizes de pesos e autocorrelação global/local;
-3. **concluída localmente; em integração:** OLS e diagnóstico espacial;
+3. **concluída:** OLS e diagnóstico espacial;
 4. SAR, SEM, SLX, SDM e impactos;
 5. MAUP e sensibilidade territorial;
 6. GWR/MGWR e heterogeneidade;
