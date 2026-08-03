@@ -1,0 +1,32 @@
+paths:
+  spatial: ../data/raw/territorios_demo.gpkg
+  table: ../data/raw/indicadores_demo.csv
+  output_dir: ../outputs/demo
+
+keys:
+  spatial: id_territorio
+  table: id_territorio
+
+crs:
+  analysis: EPSG:31983
+
+geometry:
+  repair_invalid: true
+  allow_empty: false
+
+join:
+  minimum_match_rate: 1.0
+
+table:
+  numeric_columns:
+    - indicador
+    - populacao
+
+map:
+  column: indicador
+  output: mapa_indicador.png
+  title: Indicador territorial — base demonstrativa
+  scheme: quantiles
+  k: 4
+  cmap: viridis
+  missing_color: lightgray
