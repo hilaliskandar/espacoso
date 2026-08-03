@@ -1,0 +1,60 @@
+experiment:
+  name: california_housing_offline_v0_3
+  seed: 20260803
+  output_dir: outputs/california_offline_v0_3
+
+data:
+  dataset: local_csv
+  path: data/california_housing.csv
+  target: median_house_value
+  coordinate_columns: [longitude, latitude]
+  sample_limit: 5000
+
+validation:
+  repetitions: 5
+  inner_splits: 3
+  designs:
+    - name: random
+      kind: random
+      n_splits: 5
+    - name: spatial_fine
+      kind: spatial
+      n_splits: 5
+      n_rows: 6
+      n_cols: 6
+      buffer_distance: 0.0
+    - name: spatial_coarse_buffered
+      kind: spatial
+      n_splits: 5
+      n_rows: 4
+      n_cols: 4
+      buffer_distance: 0.15
+
+models:
+  enabled: [M0, M1, M2U, M2D, M3]
+  ridge:
+    alpha_grid: [0.1, 1.0, 10.0]
+  random_forest:
+    n_estimators_grid: [200, 500]
+    min_samples_leaf_grid: [2, 5, 10]
+    max_features_grid: [0.5, 0.8, 1.0]
+    n_jobs: -1
+  lag_features:
+    k_neighbors: 10
+    distance_power: 1.0
+  spatial_basis:
+    n_components: 64
+    gamma: 0.45
+
+intervals:
+  coverage: 0.90
+
+diagnostics:
+  moran:
+    k: 8
+    permutations: 199
+  lisa:
+    k: 8
+    weighting: uniform
+    permutations: 199
+    alpha: 0.05
