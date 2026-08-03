@@ -1,0 +1,36 @@
+data:
+  path: ../data/raw/territorios_demo.gpkg
+  layer: territorios
+  id_column: id
+  value_column: indicador
+  analysis_crs: EPSG:31983
+
+analysis:
+  primary_weight: rook
+  permutations: 199
+  seed: 20260803
+  alpha: 0.05
+  alternative: two-sided
+  fdr: true
+  weights:
+    - name: rook
+      type: rook
+      transform: row_standardized
+    - name: queen
+      type: queen
+      transform: row_standardized
+    - name: knn4
+      type: knn
+      k: 4
+      symmetrization: union
+      transform: row_standardized
+    - name: distancia_1500
+      type: distance
+      threshold: 1500
+      distance_power: 0
+      symmetrization: union
+      transform: row_standardized
+
+output:
+  directory: ../outputs/demo
+  maps: true
