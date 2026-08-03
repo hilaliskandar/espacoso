@@ -19,20 +19,21 @@ data/                instruções de obtenção; dados brutos não são versiona
 templates/           estruturas reutilizáveis para o projeto aplicado
 ```
 
-A estrutura será preenchida progressivamente. Aplicações autocontidas permanecem em `applications/`; componentes realmente reutilizados por mais de uma aplicação poderão ser promovidos para `src/espacoso/`.
+Aplicações autocontidas permanecem em `applications/`; componentes realmente reutilizados por mais de uma aplicação poderão ser promovidos para `src/espacoso/`.
 
 ## Aplicações disponíveis
 
 | Aplicação | Estado | Cobertura |
 |---|---|---|
 | [Dados espaciais, projeções, junções e cartografia](applications/dados_espaciais/README.md) | funcional e testada localmente | pipeline genérico, fixture offline, 13 testes, workflow configurado |
+| [Matrizes de pesos e autocorrelação espacial](applications/autocorrelacao_espacial/README.md) | funcional e testada localmente | rook, queen, kNN, distância, Moran, Geary, LISA, Getis-Ord, FDR, 14 testes |
 | [Aprendizado de máquina espacial](applications/ml_espacial/README.md) | funcional e testada | ciclo v0.1–v0.4, 15 testes, integração contínua |
 
-A A1 valida CRS, geometrias, chaves, cobertura da junção e colunas numéricas; produz GeoPackage processado, relatório de qualidade, mapa e manifesto com hashes. O piloto de aprendizado de máquina compara modelos não espaciais e espaciais sob validação aleatória e territorial, com diagnóstico de autocorrelação residual, intervalos preditivos, rastreabilidade e gates de desempenho.
+A A1 valida CRS, geometrias, chaves, cobertura da junção e colunas numéricas. A A2 compara hipóteses de vizinhança, registra ilhas e componentes e calcula estatísticas globais e locais com permutações e correção para múltiplas comparações. O piloto de aprendizado de máquina compara modelos não espaciais e espaciais sob validação aleatória e territorial.
 
 ## Auditoria das demais aplicações
 
-A inspeção do histórico, da planilha de controle e do Google Drive localizou pacotes executáveis anteriores apenas para o ciclo de aprendizado de máquina espacial. Os demais laboratórios constam do programa, mas não possuem código previamente localizado. A A1 foi, portanto, desenvolvida como aplicação nova; as etapas seguintes serão incorporadas caso os arquivos apareçam ou desenvolvidas de forma reproduzível.
+A inspeção do histórico, da planilha de controle e do Google Drive localizou pacotes executáveis anteriores apenas para o ciclo de aprendizado de máquina espacial. A A1 e a A2 foram desenvolvidas como aplicações novas e reproduzíveis; as etapas seguintes serão incorporadas caso arquivos anteriores apareçam ou desenvolvidas conforme o backlog.
 
 Documentos de controle:
 
@@ -42,7 +43,7 @@ Documentos de controle:
 - [padrão mínimo das aplicações](docs/padrao_aplicacao.md);
 - [registro da decisão de auditoria](docs/decisoes/0001-inventario-inicial.md).
 
-A prioridade imediata passa a ser a issue [#3 — Matrizes de pesos e autocorrelação espacial](https://github.com/hilaliskandar/espacoso/issues/3), que utilizará a base validada pela A1.
+A prioridade imediata passa a ser a issue [#4 — OLS e diagnóstico espacial](https://github.com/hilaliskandar/espacoso/issues/4), apoiada nas bases e matrizes produzidas por A1 e A2.
 
 ## Princípios
 
@@ -69,4 +70,4 @@ Cada nova aplicação deverá conter, no mínimo:
 
 ## Situação
 
-A estrutura-base está estabelecida. O ciclo de aprendizado de máquina espacial v0.1–v0.4 foi migrado, as demais aplicações foram auditadas e a A1 foi implementada e testada localmente. O workflow remoto está configurado, mas seu status ainda não foi exposto pelo conector. O próximo desenvolvimento é a aplicação A2 de pesos e autocorrelação espacial.
+A estrutura-base está estabelecida. O ciclo de aprendizado de máquina espacial v0.1–v0.4 foi migrado, as demais aplicações foram auditadas e A1 e A2 foram implementadas e testadas localmente. Os workflows remotos estão configurados; seus resultados devem ser acompanhados no GitHub Actions. O próximo desenvolvimento é A3 — OLS e diagnóstico espacial.
