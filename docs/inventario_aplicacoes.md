@@ -12,25 +12,25 @@ A auditoria foi realizada em 3 de agosto de 2026 a partir de:
 - busca no Google Drive por pacotes, notebooks e scripts;
 - conteúdo já incorporado ao repositório.
 
-O roteiro contém onze etapas formativas e treze exercícios descritos como laboratórios. Entretanto, somente a etapa 10 — aprendizado de máquina espacial, validação e endogeneidade — possui pacotes executáveis e cadernos de implementação efetivamente vinculados. Não foram localizados notebooks `.ipynb`, scripts Python ou scripts R correspondentes às demais etapas.
+A auditoria localizou pacotes executáveis anteriores somente para a etapa 10 — aprendizado de máquina espacial. Não foram encontrados notebooks `.ipynb`, scripts Python ou scripts R correspondentes às demais etapas. Essa conclusão significa **“não localizado nas fontes inspecionadas”**, e não prova de que os arquivos jamais tenham existido.
 
-Essa conclusão significa **“não localizado nas fontes inspecionadas”**, e não prova de que os arquivos jamais tenham existido. Caso sejam encontrados posteriormente, deverão ser avaliados pelos critérios deste inventário antes da incorporação.
+A etapa 2 foi posteriormente implementada como aplicação nova no Espaçoso. Caso arquivos anteriores apareçam, deverão ser comparados à versão atual e classificados como históricos, incorporáveis ou não incorporáveis.
 
 ## Matriz de situação
 
-| Etapa | Conteúdo e produto previsto | Natureza computacional | Situação auditada | Evidência | Destino proposto |
+| Etapa | Conteúdo e produto previsto | Natureza computacional | Situação atual | Evidência | Destino |
 |---:|---|---|---|---|---|
-| 1 | Território, escala, dependência e heterogeneidade — nota conceitual | predominantemente conceitual | sem aplicação autônoma prevista | roteiro, linha 1 | documentação em `docs/`; sem pacote próprio |
-| 2 | Dados espaciais, projeções, joins e cartografia — base geográfica documentada | laboratório de preparação de dados | código não localizado | campos operacionais vazios | `applications/dados_espaciais/` |
-| 3 | Pesos espaciais, Moran global e LISA — diagnóstico exploratório | laboratório analítico | código não localizado | campos operacionais vazios | `applications/autocorrelacao_espacial/` |
-| 4 | OLS, resíduos e testes espaciais — comparação OLS × diagnóstico | laboratório econométrico inicial | código não localizado | campos operacionais vazios | `applications/diagnostico_ols/` |
-| 5 | SAR, SEM, SLX e SDM — modelos e impactos | laboratório econométrico espacial | código não localizado | campos operacionais vazios | `applications/econometria_espacial/` |
-| 6 | MAUP, falácia ecológica e sensibilidade — ensaio de robustez | laboratório de sensibilidade territorial | código não localizado | campos operacionais vazios | `applications/maup_sensibilidade/` |
-| 7 | GWR, MGWR e heterogeneidade — análise local crítica | laboratório de heterogeneidade | código não localizado | campos operacionais vazios | `applications/heterogeneidade_espacial/` |
-| 8 | Painéis espaciais — exercício longitudinal | laboratório espaço-temporal | código não localizado | campos operacionais vazios | `applications/paineis_espaciais/` |
-| 9 | Redes, acessibilidade e fluxos — indicador territorial | laboratório de redes e acessibilidade | código não localizado | campos operacionais vazios | `applications/redes_acessibilidade/` |
+| 1 | Território, escala, dependência e heterogeneidade — nota conceitual | predominantemente conceitual | sem aplicação autônoma prevista | roteiro, linha 1 | documentação em `docs/` |
+| 2 | Dados espaciais, projeções, joins e cartografia — base geográfica documentada | laboratório de preparação de dados | **incorporada e testada localmente** | aplicação nova; 13 testes; workflow configurado | [`applications/dados_espaciais/`](../applications/dados_espaciais/) |
+| 3 | Pesos espaciais, Moran global e LISA — diagnóstico exploratório | laboratório analítico | não localizado; issue aberta | campos operacionais vazios; issue #3 | `applications/autocorrelacao_espacial/` |
+| 4 | OLS, resíduos e testes espaciais — comparação OLS × diagnóstico | laboratório econométrico inicial | não localizado; issue aberta | campos operacionais vazios; issue #4 | `applications/diagnostico_ols/` |
+| 5 | SAR, SEM, SLX e SDM — modelos e impactos | laboratório econométrico espacial | não localizado; issue aberta | campos operacionais vazios; issue #5 | `applications/econometria_espacial/` |
+| 6 | MAUP, falácia ecológica e sensibilidade — ensaio de robustez | laboratório de sensibilidade territorial | não localizado; issue aberta | campos operacionais vazios; issue #6 | `applications/maup_sensibilidade/` |
+| 7 | GWR, MGWR e heterogeneidade — análise local crítica | laboratório de heterogeneidade | não localizado; issue aberta | campos operacionais vazios; issue #7 | `applications/heterogeneidade_espacial/` |
+| 8 | Painéis espaciais — exercício longitudinal | laboratório espaço-temporal | não localizado; issue aberta | campos operacionais vazios; issue #8 | `applications/paineis_espaciais/` |
+| 9 | Redes, acessibilidade e fluxos — indicador territorial | laboratório de redes e acessibilidade | não localizado; issue aberta | campos operacionais vazios; issue #9 | `applications/redes_acessibilidade/` |
 | 10 | Aprendizado de máquina espacial, validação e endogeneidade — benchmark preditivo | aplicação completa | **incorporada e testada** | pacotes v0.1–v0.4; 15 testes | [`applications/ml_espacial/`](../applications/ml_espacial/) |
-| 11 | Estudo aplicado — relatório reproduzível | integração dos módulos | template/código não localizado | campos operacionais vazios | `templates/projeto_aplicado/` após os módulos básicos |
+| 11 | Estudo aplicado — relatório reproduzível | integração dos módulos | template/código não localizado; issue aberta | campos operacionais vazios; issue #10 | `templates/projeto_aplicado/` |
 
 ## Laboratórios identificados no programa detalhado
 
@@ -50,13 +50,11 @@ O programa descreve exercícios nos encontros 2 a 10 e 12 a 15:
 12. acessibilidade, segregação ou redes;
 13. validação espacial e aprendizado de máquina.
 
-Para reduzir duplicação, os treze exercícios serão organizados em oito aplicações modulares, conforme a matriz de situação. A aplicação de aprendizado de máquina já ocupa uma dessas frentes.
+Para reduzir duplicação, os treze exercícios são organizados em aplicações modulares. Dados espaciais e aprendizado de máquina já estão incorporados; o módulo de pesos e autocorrelação é a prioridade seguinte.
 
-## Ordem recomendada de incorporação
+## Ordem de implementação
 
-A ordem não deve seguir a sofisticação algorítmica, mas as dependências pedagógicas:
-
-1. dados espaciais, projeções, joins e cartografia;
+1. **concluída:** dados espaciais, projeções, joins e cartografia;
 2. matrizes de pesos e autocorrelação global/local;
 3. OLS e diagnóstico espacial;
 4. SAR, SEM, SLX, SDM e impactos;
