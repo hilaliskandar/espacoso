@@ -25,15 +25,16 @@ Aplicações autocontidas permanecem em `applications/`; componentes realmente r
 
 | Aplicação | Estado | Cobertura |
 |---|---|---|
-| [Dados espaciais, projeções, junções e cartografia](applications/dados_espaciais/README.md) | funcional e testada localmente | pipeline genérico, fixture offline, 13 testes, workflow configurado |
-| [Matrizes de pesos e autocorrelação espacial](applications/autocorrelacao_espacial/README.md) | funcional e testada localmente | rook, queen, kNN, distância, Moran, Geary, LISA, Getis-Ord, FDR, 14 testes |
+| [Dados espaciais, projeções, junções e cartografia](applications/dados_espaciais/README.md) | funcional e testada | pipeline genérico, fixture offline, 13 testes |
+| [Matrizes de pesos e autocorrelação espacial](applications/autocorrelacao_espacial/README.md) | funcional e testada | rook, queen, kNN, distância, Moran, Geary, LISA, Getis-Ord, FDR, 14 testes |
+| [OLS e diagnóstico espacial](applications/diagnostico_ols/README.md) | funcional e testada localmente | OLS, HC3, VIF, influência, Moran residual, testes LM, 14 testes, workflow configurado |
 | [Aprendizado de máquina espacial](applications/ml_espacial/README.md) | funcional e testada | ciclo v0.1–v0.4, 15 testes, integração contínua |
 
-A A1 valida CRS, geometrias, chaves, cobertura da junção e colunas numéricas. A A2 compara hipóteses de vizinhança, registra ilhas e componentes e calcula estatísticas globais e locais com permutações e correção para múltiplas comparações. O piloto de aprendizado de máquina compara modelos não espaciais e espaciais sob validação aleatória e territorial.
+A A1 valida CRS, geometrias, chaves, cobertura da junção e colunas numéricas. A A2 compara hipóteses de vizinhança, registra ilhas e componentes e calcula estatísticas globais e locais. A A3 constrói a linha de base OLS, compara erros convencionais e robustos e diagnostica heterocedasticidade, influência, multicolinearidade e dependência espacial residual. O piloto de aprendizado de máquina compara modelos não espaciais e espaciais sob validação aleatória e territorial.
 
 ## Auditoria das demais aplicações
 
-A inspeção do histórico, da planilha de controle e do Google Drive localizou pacotes executáveis anteriores apenas para o ciclo de aprendizado de máquina espacial. A A1 e a A2 foram desenvolvidas como aplicações novas e reproduzíveis; as etapas seguintes serão incorporadas caso arquivos anteriores apareçam ou desenvolvidas conforme o backlog.
+A inspeção do histórico, da planilha de controle e do Google Drive localizou pacotes executáveis anteriores apenas para o ciclo de aprendizado de máquina espacial. A A1, a A2 e a A3 foram desenvolvidas como aplicações novas e reproduzíveis; as etapas seguintes serão incorporadas caso arquivos anteriores apareçam ou desenvolvidas conforme o backlog.
 
 Documentos de controle:
 
@@ -43,7 +44,7 @@ Documentos de controle:
 - [padrão mínimo das aplicações](docs/padrao_aplicacao.md);
 - [registro da decisão de auditoria](docs/decisoes/0001-inventario-inicial.md).
 
-A prioridade imediata passa a ser a issue [#4 — OLS e diagnóstico espacial](https://github.com/hilaliskandar/espacoso/issues/4), apoiada nas bases e matrizes produzidas por A1 e A2.
+A prioridade imediata passa a ser a issue [#5 — SAR, SEM, SLX, SDM e interpretação de impactos](https://github.com/hilaliskandar/espacoso/issues/5), apoiada nas bases, matrizes e diagnósticos produzidos por A1–A3.
 
 ## Princípios
 
@@ -70,4 +71,4 @@ Cada nova aplicação deverá conter, no mínimo:
 
 ## Situação
 
-A estrutura-base está estabelecida. O ciclo de aprendizado de máquina espacial v0.1–v0.4 foi migrado, as demais aplicações foram auditadas e A1 e A2 foram implementadas e testadas localmente. Os workflows remotos estão configurados; seus resultados devem ser acompanhados no GitHub Actions. O próximo desenvolvimento é A3 — OLS e diagnóstico espacial.
+A estrutura-base está estabelecida. O ciclo de aprendizado de máquina espacial v0.1–v0.4 foi migrado, as demais aplicações foram auditadas e A1–A3 foram implementadas. A A3 possui 14 testes locais e execução demonstrativa completa; sua integração depende da aprovação do GitHub Actions. O próximo desenvolvimento é A4 — econometria espacial e interpretação de impactos.
