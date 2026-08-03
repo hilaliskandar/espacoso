@@ -4,8 +4,8 @@ As issues vinculadas a este documento controlam o desenvolvimento ou a incorpora
 
 | Código | Aplicação | Dependência principal | Issue | Situação |
 |---|---|---|---:|---|
-| A1 | Dados espaciais, projeções, junções e cartografia | nenhuma | [#2](https://github.com/hilaliskandar/espacoso/issues/2) | aberta — prioridade imediata |
-| A2 | Matrizes de pesos e autocorrelação | A1 | [#3](https://github.com/hilaliskandar/espacoso/issues/3) | aberta |
+| A1 | Dados espaciais, projeções, junções e cartografia | nenhuma | [#2](https://github.com/hilaliskandar/espacoso/issues/2) | incorporada; 13 testes locais; workflow configurado |
+| A2 | Matrizes de pesos e autocorrelação | A1 | [#3](https://github.com/hilaliskandar/espacoso/issues/3) | aberta — prioridade imediata |
 | A3 | OLS e diagnóstico espacial | A2 | [#4](https://github.com/hilaliskandar/espacoso/issues/4) | aberta |
 | A4 | SAR, SEM, SLX, SDM e impactos | A3 | [#5](https://github.com/hilaliskandar/espacoso/issues/5) | aberta |
 | A5 | MAUP e sensibilidade territorial | A1–A4 | [#6](https://github.com/hilaliskandar/espacoso/issues/6) | aberta |
