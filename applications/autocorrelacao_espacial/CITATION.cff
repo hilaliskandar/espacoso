@@ -1,0 +1,8 @@
+cff-version: 1.2.0
+message: "Para citar esta aplicação, use os metadados abaixo."
+title: "A2 — Matrizes de pesos e autocorrelação espacial"
+version: 0.1.0
+date-released: 2026-08-03
+license: GPL-3.0-or-later
+authors:
+  - family-names: "Projeto Espaçoso"
