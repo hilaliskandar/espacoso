@@ -14,7 +14,7 @@ A auditoria foi realizada em 3 de agosto de 2026 a partir de:
 
 A auditoria localizou pacotes executáveis anteriores somente para a etapa 10 — aprendizado de máquina espacial. Não foram encontrados notebooks `.ipynb`, scripts Python ou scripts R correspondentes às demais etapas. Essa conclusão significa **“não localizado nas fontes inspecionadas”**, e não prova de que os arquivos jamais tenham existido.
 
-A etapa 2 foi posteriormente implementada como aplicação nova no Espaçoso. Caso arquivos anteriores apareçam, deverão ser comparados à versão atual e classificados como históricos, incorporáveis ou não incorporáveis.
+As etapas 2 e 3 foram posteriormente implementadas como aplicações novas no Espaçoso. Caso arquivos anteriores apareçam, deverão ser comparados às versões atuais e classificados como históricos, incorporáveis ou não incorporáveis.
 
 ## Matriz de situação
 
@@ -22,7 +22,7 @@ A etapa 2 foi posteriormente implementada como aplicação nova no Espaçoso. Ca
 |---:|---|---|---|---|---|
 | 1 | Território, escala, dependência e heterogeneidade — nota conceitual | predominantemente conceitual | sem aplicação autônoma prevista | roteiro, linha 1 | documentação em `docs/` |
 | 2 | Dados espaciais, projeções, joins e cartografia — base geográfica documentada | laboratório de preparação de dados | **incorporada e testada localmente** | aplicação nova; 13 testes; workflow configurado | [`applications/dados_espaciais/`](../applications/dados_espaciais/) |
-| 3 | Pesos espaciais, Moran global e LISA — diagnóstico exploratório | laboratório analítico | não localizado; issue aberta | campos operacionais vazios; issue #3 | `applications/autocorrelacao_espacial/` |
+| 3 | Pesos espaciais, Moran global e LISA — diagnóstico exploratório | laboratório analítico | **incorporada e testada localmente** | aplicação nova; 14 testes; workflow configurado | [`applications/autocorrelacao_espacial/`](../applications/autocorrelacao_espacial/) |
 | 4 | OLS, resíduos e testes espaciais — comparação OLS × diagnóstico | laboratório econométrico inicial | não localizado; issue aberta | campos operacionais vazios; issue #4 | `applications/diagnostico_ols/` |
 | 5 | SAR, SEM, SLX e SDM — modelos e impactos | laboratório econométrico espacial | não localizado; issue aberta | campos operacionais vazios; issue #5 | `applications/econometria_espacial/` |
 | 6 | MAUP, falácia ecológica e sensibilidade — ensaio de robustez | laboratório de sensibilidade territorial | não localizado; issue aberta | campos operacionais vazios; issue #6 | `applications/maup_sensibilidade/` |
@@ -50,12 +50,12 @@ O programa descreve exercícios nos encontros 2 a 10 e 12 a 15:
 12. acessibilidade, segregação ou redes;
 13. validação espacial e aprendizado de máquina.
 
-Para reduzir duplicação, os treze exercícios são organizados em aplicações modulares. Dados espaciais e aprendizado de máquina já estão incorporados; o módulo de pesos e autocorrelação é a prioridade seguinte.
+Para reduzir duplicação, os treze exercícios são organizados em aplicações modulares. Dados espaciais, autocorrelação e aprendizado de máquina já estão incorporados; OLS e diagnóstico espacial passam a constituir a prioridade seguinte.
 
 ## Ordem de implementação
 
 1. **concluída:** dados espaciais, projeções, joins e cartografia;
-2. matrizes de pesos e autocorrelação global/local;
+2. **concluída:** matrizes de pesos e autocorrelação global/local;
 3. OLS e diagnóstico espacial;
 4. SAR, SEM, SLX, SDM e impactos;
 5. MAUP e sensibilidade territorial;
