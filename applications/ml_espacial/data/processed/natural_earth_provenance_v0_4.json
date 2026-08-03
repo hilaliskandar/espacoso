@@ -1,0 +1,33 @@
+{
+  "benchmark": "Natural Earth low-resolution countries",
+  "source_scale": "1:110m",
+  "source_fixture": "pyogrio/tests/fixtures/naturalearth_lowres",
+  "upstream_url": "https://www.naturalearthdata.com/downloads/110m-cultural-vectors/",
+  "source_files_sha256": {
+    "naturalearth_lowres.cpg": "09fc313075748ce8ead962229ed89c919d5a9ff71974ee725a0b48bb87d975a2",
+    "naturalearth_lowres.dbf": "d2ae1c99adcf8e4586a5b12c639672035fa2f3f469e7255947de00401c3ed7e1",
+    "naturalearth_lowres.prj": "98aaf3d1c0ecadf1a424a4536de261c3daf4e373697cb86c40c43b989daf52eb",
+    "naturalearth_lowres.shp": "08e341606e8391e458c3f08deb312de664b56bfae376064c5aa0aee6681a5f55",
+    "naturalearth_lowres.shx": "8b0be2ad97dd484aee5c2ebc98697d5372e832b8ae58a35a661aeef6b985668d"
+  },
+  "processed_csv_sha256": "27ff1d451d9e0ea560b5d94c0b6b23201834de5fde56cc2b09b51e36cfd3db2d",
+  "country_index_sha256": "733f9b1d3270166416c9c5115aa1657db48ae8d70032017185b4186666434ee8",
+  "crs_source": "EPSG:4326",
+  "crs_analysis": "EPSG:6933",
+  "excluded_continents": ["Antarctica", "Seven seas (open ocean)"],
+  "n_observations": 175,
+  "target": "log1p(gdp_md_est)",
+  "features": [
+    "log_pop_est",
+    "log_area_km2",
+    "log_perimeter_km",
+    "compactness",
+    "continent_Africa",
+    "continent_Asia",
+    "continent_Europe",
+    "continent_North America",
+    "continent_Oceania",
+    "continent_South America"
+  ],
+  "coordinate_columns": ["x_km", "y_km"]
+}
