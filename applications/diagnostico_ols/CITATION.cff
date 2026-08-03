@@ -1,0 +1,8 @@
+cff-version: 1.2.0
+title: "Espaçoso — A3: OLS e diagnóstico espacial"
+message: "Cite esta aplicação e o repositório Espaçoso."
+type: software
+version: 0.1.0
+date-released: 2026-08-03
+license: GPL-3.0-or-later
+repository-code: "https://github.com/hilaliskandar/espacoso"

@@ -1,0 +1,33 @@
+data:
+  path: ../data/demo/demo_ols.gpkg
+  layer: dados
+  id_column: id
+
+models:
+  - name: baseline
+    target: y
+    predictors: [x1, x2]
+    add_constant: true
+    robust_covariance: HC3
+  - name: expanded
+    target: y
+    predictors: [x1, x2, z_spatial]
+    add_constant: true
+    robust_covariance: HC3
+
+weights:
+  - name: rook
+    path: ../data/demo/pesos_rook.csv
+    transformation: row_standardized
+  - name: queen
+    path: ../data/demo/pesos_queen.csv
+    transformation: row_standardized
+
+primary_model: baseline
+primary_weights: rook
+permutations: 999
+seed: 20260001
+alpha: 0.05
+
+output:
+  dir: ../outputs/demo

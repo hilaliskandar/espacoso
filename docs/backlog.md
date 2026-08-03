@@ -4,10 +4,10 @@ As issues vinculadas a este documento controlam o desenvolvimento ou a incorpora
 
 | Código | Aplicação | Dependência principal | Issue | Situação |
 |---|---|---|---:|---|
-| A1 | Dados espaciais, projeções, junções e cartografia | nenhuma | [#2](https://github.com/hilaliskandar/espacoso/issues/2) | incorporada; 13 testes locais; workflow configurado |
-| A2 | Matrizes de pesos e autocorrelação | A1 | [#3](https://github.com/hilaliskandar/espacoso/issues/3) | incorporada; 14 testes locais; workflow configurado |
-| A3 | OLS e diagnóstico espacial | A2 | [#4](https://github.com/hilaliskandar/espacoso/issues/4) | aberta — prioridade imediata |
-| A4 | SAR, SEM, SLX, SDM e impactos | A3 | [#5](https://github.com/hilaliskandar/espacoso/issues/5) | aberta |
+| A1 | Dados espaciais, projeções, junções e cartografia | nenhuma | [#2](https://github.com/hilaliskandar/espacoso/issues/2) | incorporada; 13 testes; workflow configurado |
+| A2 | Matrizes de pesos e autocorrelação | A1 | [#3](https://github.com/hilaliskandar/espacoso/issues/3) | incorporada; 14 testes locais e remotos |
+| A3 | OLS e diagnóstico espacial | A2 | [#4](https://github.com/hilaliskandar/espacoso/issues/4) | pronta para integração; 14 testes locais; workflow configurado |
+| A4 | SAR, SEM, SLX, SDM e impactos | A3 | [#5](https://github.com/hilaliskandar/espacoso/issues/5) | aberta — próxima prioridade |
 | A5 | MAUP e sensibilidade territorial | A1–A4 | [#6](https://github.com/hilaliskandar/espacoso/issues/6) | aberta |
 | A6 | GWR e MGWR | A3 e A5 | [#7](https://github.com/hilaliskandar/espacoso/issues/7) | aberta |
 | A7 | Painéis espaciais | A4 | [#8](https://github.com/hilaliskandar/espacoso/issues/8) | aberta |
