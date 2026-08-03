@@ -25,13 +25,14 @@ A estrutura será preenchida progressivamente. Aplicações autocontidas permane
 
 | Aplicação | Estado | Cobertura |
 |---|---|---|
+| [Dados espaciais, projeções, junções e cartografia](applications/dados_espaciais/README.md) | funcional e testada localmente | pipeline genérico, fixture offline, 13 testes, workflow configurado |
 | [Aprendizado de máquina espacial](applications/ml_espacial/README.md) | funcional e testada | ciclo v0.1–v0.4, 15 testes, integração contínua |
 
-O piloto de aprendizado de máquina espacial compara modelos não espaciais e espaciais sob validação aleatória e territorial, com diagnóstico de autocorrelação residual, intervalos preditivos, rastreabilidade e gates de desempenho.
+A A1 valida CRS, geometrias, chaves, cobertura da junção e colunas numéricas; produz GeoPackage processado, relatório de qualidade, mapa e manifesto com hashes. O piloto de aprendizado de máquina compara modelos não espaciais e espaciais sob validação aleatória e territorial, com diagnóstico de autocorrelação residual, intervalos preditivos, rastreabilidade e gates de desempenho.
 
 ## Auditoria das demais aplicações
 
-A inspeção do histórico, da planilha de controle e do Google Drive localizou pacotes executáveis apenas para o ciclo de aprendizado de máquina espacial. Os demais laboratórios constam do programa, mas não possuem código previamente localizado. Eles serão incorporados caso os arquivos apareçam ou desenvolvidos de forma nova e reproduzível.
+A inspeção do histórico, da planilha de controle e do Google Drive localizou pacotes executáveis anteriores apenas para o ciclo de aprendizado de máquina espacial. Os demais laboratórios constam do programa, mas não possuem código previamente localizado. A A1 foi, portanto, desenvolvida como aplicação nova; as etapas seguintes serão incorporadas caso os arquivos apareçam ou desenvolvidas de forma reproduzível.
 
 Documentos de controle:
 
@@ -41,7 +42,7 @@ Documentos de controle:
 - [padrão mínimo das aplicações](docs/padrao_aplicacao.md);
 - [registro da decisão de auditoria](docs/decisoes/0001-inventario-inicial.md).
 
-A prioridade imediata é a issue [#2 — Dados espaciais, projeções, junções e cartografia](https://github.com/hilaliskandar/espacoso/issues/2), base necessária para os módulos seguintes.
+A prioridade imediata passa a ser a issue [#3 — Matrizes de pesos e autocorrelação espacial](https://github.com/hilaliskandar/espacoso/issues/3), que utilizará a base validada pela A1.
 
 ## Princípios
 
@@ -68,4 +69,4 @@ Cada nova aplicação deverá conter, no mínimo:
 
 ## Situação
 
-A estrutura-base está estabelecida, o ciclo de aprendizado de máquina espacial v0.1–v0.4 foi integralmente migrado e as demais aplicações foram auditadas e convertidas em backlog rastreável. O próximo desenvolvimento é a aplicação A1 de preparação e cartografia de dados espaciais.
+A estrutura-base está estabelecida. O ciclo de aprendizado de máquina espacial v0.1–v0.4 foi migrado, as demais aplicações foram auditadas e a A1 foi implementada e testada localmente. O workflow remoto está configurado, mas seu status ainda não foi exposto pelo conector. O próximo desenvolvimento é a aplicação A2 de pesos e autocorrelação espacial.
