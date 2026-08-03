@@ -27,7 +27,7 @@ Aplicações autocontidas permanecem em `applications/`; componentes realmente r
 |---|---|---|
 | [Dados espaciais, projeções, junções e cartografia](applications/dados_espaciais/README.md) | funcional e testada | pipeline genérico, fixture offline, 13 testes |
 | [Matrizes de pesos e autocorrelação espacial](applications/autocorrelacao_espacial/README.md) | funcional e testada | rook, queen, kNN, distância, Moran, Geary, LISA, Getis-Ord, FDR, 14 testes |
-| [OLS e diagnóstico espacial](applications/diagnostico_ols/README.md) | funcional e testada localmente | OLS, HC3, VIF, influência, Moran residual, testes LM, 14 testes, workflow configurado |
+| [OLS e diagnóstico espacial](applications/diagnostico_ols/README.md) | funcional e testada | OLS, HC3, VIF, influência, Moran residual, testes LM, 14 testes locais e remotos |
 | [Aprendizado de máquina espacial](applications/ml_espacial/README.md) | funcional e testada | ciclo v0.1–v0.4, 15 testes, integração contínua |
 
 A A1 valida CRS, geometrias, chaves, cobertura da junção e colunas numéricas. A A2 compara hipóteses de vizinhança, registra ilhas e componentes e calcula estatísticas globais e locais. A A3 constrói a linha de base OLS, compara erros convencionais e robustos e diagnostica heterocedasticidade, influência, multicolinearidade e dependência espacial residual. O piloto de aprendizado de máquina compara modelos não espaciais e espaciais sob validação aleatória e territorial.
@@ -71,4 +71,4 @@ Cada nova aplicação deverá conter, no mínimo:
 
 ## Situação
 
-A estrutura-base está estabelecida. O ciclo de aprendizado de máquina espacial v0.1–v0.4 foi migrado, as demais aplicações foram auditadas e A1–A3 foram implementadas. A A3 possui 14 testes locais e execução demonstrativa completa; sua integração depende da aprovação do GitHub Actions. O próximo desenvolvimento é A4 — econometria espacial e interpretação de impactos.
+A estrutura-base está estabelecida. O ciclo de aprendizado de máquina espacial v0.1–v0.4 foi migrado, as demais aplicações foram auditadas e A1–A3 foram implementadas e integradas. A próxima etapa é A4 — econometria espacial e interpretação de impactos.
