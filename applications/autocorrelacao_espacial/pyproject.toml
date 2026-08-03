@@ -1,0 +1,33 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "autocorrelacao-espacial"
+version = "0.1.0"
+description = "Aplicação didática para matrizes de pesos e autocorrelação espacial"
+readme = "README.md"
+requires-python = ">=3.11"
+license = {text = "GPL-3.0-or-later"}
+authors = [{name = "Projeto Espaçoso"}]
+dependencies = [
+  "numpy>=2.0",
+  "pandas>=2.2",
+  "geopandas>=1.0",
+  "shapely>=2.0",
+  "matplotlib>=3.8",
+  "PyYAML>=6.0"
+]
+
+[project.scripts]
+autocorrelacao-espacial = "autocorrelacao_espacial.run:main"
+
+[tool.setuptools]
+package-dir = {"" = "src"}
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-ra"
