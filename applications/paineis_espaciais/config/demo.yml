@@ -1,0 +1,42 @@
+data:
+  path: ../data/demo/painel_demo.csv
+  unit_col: unit_id
+  time_col: time_id
+
+gap_strategy: none
+
+models:
+  - name: fe_baseline
+    target: y
+    predictors: [x1, x2]
+    fixed_effects: unit
+    model_type: fe
+
+  - name: fe_twoway
+    target: y
+    predictors: [x1, x2]
+    fixed_effects: two_way
+    model_type: fe
+
+  - name: lag_espacial
+    target: y
+    predictors: [x1, x2]
+    fixed_effects: unit
+    model_type: spatial_lag
+
+  - name: erro_espacial
+    target: y
+    predictors: [x1, x2]
+    fixed_effects: unit
+    model_type: spatial_error
+
+weights:
+  - name: queen
+    path: ../data/demo/pesos_queen.csv
+    transformation: row_standardized
+
+seed: 20260701
+alpha: 0.05
+
+output:
+  dir: ../outputs/demo
