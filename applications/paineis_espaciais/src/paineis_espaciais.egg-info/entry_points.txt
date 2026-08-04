@@ -1,0 +1,2 @@
+[console_scripts]
+paineis-espaciais = paineis_espaciais.run:main
