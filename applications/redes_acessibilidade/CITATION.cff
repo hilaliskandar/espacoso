@@ -1,0 +1,19 @@
+cff-version: 1.2.0
+message: "Se utilizar esta aplicação, cite como abaixo."
+title: "Espaçoso A8 — Redes, acessibilidade e fluxos territoriais"
+version: "0.1.0"
+date-released: "2026-08-04"
+license: GPL-3.0-or-later
+authors:
+  - name: "Projeto Espaçoso"
+abstract: >
+  Aplicação didática para modelagem de redes espaciais, cálculo de acessibilidade
+  gravitacional com múltiplas funções de impedância, diagnóstico topológico,
+  centralidade e comparação rede vs. euclidiana.
+keywords:
+  - acessibilidade espacial
+  - redes viárias
+  - impedância
+  - análise territorial
+  - Python
+  - geopandas
