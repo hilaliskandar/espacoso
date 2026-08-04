@@ -1,0 +1,30 @@
+data:
+  path: ../data/demo/demo_maup.gpkg
+  layer: micro
+  id_column: id
+
+variables:
+  - renda_media
+  - populacao
+
+schemes:
+  - name: micro
+    dissolve_column: null
+    weight_column: populacao
+
+  - name: meso
+    dissolve_column: meso_id
+    weight_column: populacao
+
+  - name: macro
+    dissolve_column: macro_id
+    weight_column: populacao
+
+permutations: 999
+seed: 20260006
+alpha: 0.05
+classes: 5
+colormap: YlOrRd
+
+output:
+  dir: ../outputs/demo
