@@ -1,0 +1,9 @@
+{
+  "rho_true": 0.4,
+  "beta_const": 2.0,
+  "beta_x1": 1.5,
+  "beta_x2": -0.8,
+  "sigma_true": 1.0,
+  "seed": 20260001,
+  "n": 25
+}
