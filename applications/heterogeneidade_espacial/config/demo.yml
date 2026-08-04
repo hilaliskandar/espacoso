@@ -1,0 +1,34 @@
+data:
+  path: ../data/demo/demo_gwr.gpkg
+  layer: dados
+  id_column: id
+
+model:
+  target: y
+  predictors: [x1, x2, x3]
+  add_constant: true
+  robust_covariance: HC3
+
+bandwidth:
+  criterion: AICc
+  kernel: bisquare
+  fixed_or_adaptive: adaptive
+  search_method: golden_section
+
+run_mgwr: true
+
+mgwr_bandwidth:
+  criterion: AICc
+  kernel: bisquare
+  fixed_or_adaptive: adaptive
+  search_method: golden_section
+
+permutations: 99
+seed: 20260007
+alpha: 0.05
+
+n_bootstrap: 0
+bootstrap_fraction: 0.8
+
+output:
+  dir: ../outputs/demo
