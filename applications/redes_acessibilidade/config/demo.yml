@@ -1,0 +1,28 @@
+data:
+  network_path: ../data/raw/rede_demo.gpkg
+  network_layer: rede
+  origins_path: ../data/raw/territorios_demo.gpkg
+  origins_layer: territorios
+  origins_id_column: id
+  opportunities_column: oportunidades
+  population_column: populacao
+  analysis_crs: EPSG:31983
+
+analysis:
+  impedances:
+    - name: linear_30km
+      function: linear
+      cutoff: 30000.0
+    - name: exp_neg_b0001
+      function: negative_exponential
+      beta: 0.0001
+  centrality:
+    - betweenness
+    - closeness
+    - degree
+  max_cost: 50000.0
+  seed: 20260804
+
+output:
+  directory: ../outputs/demo
+  maps: true

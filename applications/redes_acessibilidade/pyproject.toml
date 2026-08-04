@@ -1,0 +1,35 @@
+[build-system]
+requires = ["setuptools", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "espacoso-redes-acessibilidade"
+version = "0.1.0"
+description = "Aplicação didática de redes espaciais, acessibilidade e fluxos territoriais"
+requires-python = ">=3.11"
+dependencies = [
+  "geopandas>=1.0,<2",
+  "pandas>=2.2,<3",
+  "shapely>=2.0,<3",
+  "numpy>=2.0,<3",
+  "matplotlib>=3.8,<4",
+  "PyYAML>=6,<7",
+  "pyogrio>=0.9,<1"
+]
+
+[project.optional-dependencies]
+test = ["pytest>=8,<10"]
+
+[project.scripts]
+redes-acessibilidade = "redes_acessibilidade.run:main"
+
+[tool.setuptools]
+package-dir = {"" = "src"}
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+pythonpath = ["src"]
+testpaths = ["tests"]
+addopts = "-ra"
