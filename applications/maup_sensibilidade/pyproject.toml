@@ -1,0 +1,37 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "maup-sensibilidade"
+version = "0.1.0"
+description = "Ensaio reproduzível sobre MAUP: efeitos de escala e zoneamento na estatística espacial"
+readme = "README.md"
+requires-python = ">=3.11"
+license = {text = "GPL-3.0-or-later"}
+authors = [{name = "Projeto Espaçoso"}]
+dependencies = [
+  "geopandas>=1.0",
+  "matplotlib>=3.8",
+  "numpy>=2.0",
+  "pandas>=2.2",
+  "pyyaml>=6.0",
+  "scipy>=1.13",
+  "shapely>=2.0",
+  "mapclassify>=2.6",
+  "tabulate>=0.9",
+]
+
+[project.optional-dependencies]
+dev = ["pytest>=8"]
+
+[project.scripts]
+maup-sensibilidade = "maup_sensibilidade.run:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+pythonpath = ["src"]
+testpaths = ["tests"]
+addopts = "-ra"
