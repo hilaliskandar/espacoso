@@ -1,0 +1,8 @@
+cff-version: 1.2.0
+message: "Para citar este template, use os metadados abaixo."
+title: "A11 — Projeto Aplicado Reproduzível"
+version: 0.1.0
+date-released: 2026-08-04
+license: GPL-3.0-or-later
+authors:
+  - family-names: "Projeto Espaçoso"

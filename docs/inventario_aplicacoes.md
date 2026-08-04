@@ -30,7 +30,7 @@ As etapas 2, 3 e 4 foram posteriormente implementadas como aplicações novas no
 | 8 | Painéis espaciais — exercício longitudinal | laboratório espaço-temporal | não localizado; issue aberta | campos operacionais vazios; issue #8 | `applications/paineis_espaciais/` |
 | 9 | Redes, acessibilidade e fluxos — indicador territorial | laboratório de redes e acessibilidade | não localizado; issue aberta | campos operacionais vazios; issue #9 | `applications/redes_acessibilidade/` |
 | 10 | Aprendizado de máquina espacial, validação e endogeneidade — benchmark preditivo | aplicação completa | **incorporada e testada** | pacotes v0.1–v0.4; 15 testes | [`applications/ml_espacial/`](../applications/ml_espacial/) |
-| 11 | Estudo aplicado — relatório reproduzível | integração dos módulos | template/código não localizado; issue aberta | campos operacionais vazios; issue #10 | `templates/projeto_aplicado/` |
+| 11 | Estudo aplicado — relatório reproduzível | integração dos módulos | **template incorporado e testado** | template novo; 19 testes; workflow configurado; issue #10 | [`templates/projeto_aplicado/`](../templates/projeto_aplicado/) |
 
 ## Laboratórios identificados no programa detalhado
 
@@ -62,7 +62,7 @@ Para reduzir duplicação, os treze exercícios são organizados em aplicações
 6. GWR/MGWR e heterogeneidade;
 7. painéis espaciais;
 8. redes e acessibilidade;
-9. template do estudo aplicado.
+9. **concluída:** template do estudo aplicado.
 
 O módulo de aprendizado de máquina permanece como aplicação avançada e referência de padrões de reprodutibilidade.
 

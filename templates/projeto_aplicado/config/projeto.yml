@@ -1,0 +1,80 @@
+# Configuração do projeto aplicado
+#
+# Preencha todos os campos marcados com TODO antes de executar.
+# Parâmetros metodológicos devem permanecer neste arquivo para garantir
+# reprodutibilidade — nunca fixe valores diretamente no código.
+
+projeto:
+  titulo: "TODO: título do estudo"
+  participante: "TODO: nome(s)"
+  orientador: "TODO: nome"
+  versao: "0.1.0"
+  data_execucao: "TODO: AAAA-MM-DD"
+
+data:
+  path: "../data/raw/base.gpkg"       # TODO: caminho para o arquivo de dados
+  layer: "territorios"                # TODO: nome da camada
+  id_column: "id"                     # TODO: coluna de identificador
+  value_column: "indicador"           # TODO: variável dependente
+  analysis_crs: "EPSG:31983"          # TODO: CRS de análise (UTM ou igual ao dado)
+
+# Controle de reprodutibilidade
+reproducao:
+  seed: 20260804
+  permutations: 999
+
+# Análise exploratória
+eda:
+  enabled: true
+  maps: true
+  moran_global: true
+  moran_local: true
+
+# Estratégia analítica — descomente o bloco pertinente
+# Apenas uma estratégia deve estar ativa por vez.
+
+# --- Estimação ---
+estimacao:
+  enabled: false
+  tipo: "ols"           # ols | sar | sem | slx | sdm | gwr | mgwr | painel
+  variaveis:
+    dependente: "TODO"
+    independentes:
+      - "TODO"
+  matriz_pesos:
+    tipo: "queen"       # queen | rook | knn | distancia
+    k: 4                # só para knn
+    threshold: null     # só para distancia (metros)
+    transform: "row_standardized"
+
+# --- Predição ---
+predicao:
+  enabled: false
+  modelos:
+    - nome: "m0_baseline"
+      tipo: "ridge"
+  validacao:
+    tipo: "spatial_block"
+    n_splits: 5
+    buffer_m: 0
+  metricas:
+    - rmse
+    - mae
+    - r2
+    - moran_residuos
+
+# --- Causalidade ---
+causalidade:
+  enabled: false
+  desenho: "did"        # did | iv | rdd
+  tratamento: "TODO"
+  resultado: "TODO"
+  periodo_pre: "TODO"
+  periodo_pos: "TODO"
+
+saida:
+  directory: "../outputs"
+  relatorio: true
+  manifesto: true
+  geopackage: true
+  mapas: true
