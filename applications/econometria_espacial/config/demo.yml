@@ -1,0 +1,49 @@
+data:
+  path: ../data/demo/demo.gpkg
+  layer: dados
+  id_column: id
+
+weights:
+  - name: rook
+    path: ../data/demo/pesos_rook.csv
+    transformation: row_standardized
+
+models:
+  - name: OLS
+    model_type: OLS
+    target: y
+    predictors: [x1, x2]
+    weights_name: rook
+
+  - name: SAR
+    model_type: SAR
+    target: y
+    predictors: [x1, x2]
+    weights_name: rook
+
+  - name: SEM
+    model_type: SEM
+    target: y
+    predictors: [x1, x2]
+    weights_name: rook
+
+  - name: SLX
+    model_type: SLX
+    target: y
+    predictors: [x1, x2]
+    weights_name: rook
+
+  - name: SDM
+    model_type: SDM
+    target: y
+    predictors: [x1, x2]
+    weights_name: rook
+
+primary_model: SAR
+primary_weights: rook
+permutations: 999
+seed: 20260001
+alpha: 0.05
+
+output:
+  dir: ../outputs/demo
